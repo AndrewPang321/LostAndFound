@@ -6,7 +6,7 @@ This project is for the course CI6205.
 - Vue.js
 - Vuex
 - node.js
-- mySQL
+- MySQL
 
 ## Project setup
 `yarn install`
