@@ -7,3 +7,12 @@ This project is for course CI6205.
 - Vuex
 - node.js
 - mySQL
+
+## Project setup
+`yarn install`
+
+### Compiles and hot-reloads for development
+`yarn serve`
+
+### Compiles and minifies for production
+`yarn build`
