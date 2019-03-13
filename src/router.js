@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './components/Home.vue'
 import Lost from './components/Lost.vue'
 import Found from './components/Found.vue'
+import Feedback from './components/Feedback.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/found',
       name: 'found',
       component: Found
+    },
+    {
+      path: '/feedback',
+      name: 'feedback',
+      component: Feedback
     },
   ]
 })

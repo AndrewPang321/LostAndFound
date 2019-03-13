@@ -82,8 +82,9 @@ export default {
     items: [
       { icon: "announcement", text: "Announcement" },
       { icon: "remove_shopping_cart", text: "Lost" },
-      { icon: "add_shopping_cart", text: "Found" }
-      // { divider: true },
+      { icon: "add_shopping_cart", text: "Found" },
+      { divider: true },
+      { icon: "feedback", text: "Feedback" },
       // { heading: 'Labels' },
       // { icon: 'add', text: 'Create new label' },
       // { divider: true },
@@ -100,11 +101,17 @@ export default {
   methods: {
     mapPage(pageName) {
       switch (pageName) {
+        case "Announcement":
+          this.$router.push("/");
+          break;
         case "Lost":
           this.$router.push("/lost");
           break;
         case "Found":
           this.$router.push("/found");
+          break;
+        case "Feedback":
+          this.$router.push("/feedback");
           break;
       }
     }
