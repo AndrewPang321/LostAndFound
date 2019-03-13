@@ -9,7 +9,7 @@
     >
       <v-list
         dense
-        class="grey lighten-4 pt-2"
+        class="grey lighten-4 mt-4"
       >
         <template v-for="(item, i) in items">
           <v-layout
@@ -50,7 +50,7 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="amber" app absolute clipped-left>
+    <v-toolbar color="amber" app clipped-left>
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <span class="title ml-3 mr-5">Lost&nbsp;<span class="font-weight-light">and</span>&nbsp;Found</span>
       <v-text-field
@@ -64,8 +64,9 @@
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height class="grey lighten-4">
-        <v-layout justify-center align-center>
-          <v-flex shrink>
+        <v-layout justify-center>
+          <v-flex grow>
+          <!-- <v-flex shrink> -->
             <router-view/>
           </v-flex>
         </v-layout>
