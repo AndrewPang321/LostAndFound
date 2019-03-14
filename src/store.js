@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     lostItems: [
       {
+        id: 1,
         name: "Macbook",
         category: "Electronic",
         location: "WKW Lobby",
@@ -15,6 +16,7 @@ export default new Vuex.Store({
         src: 'https://img.purch.com/o/aHR0cHM6Ly93d3cubGFwdG9wbWFnLmNvbS9pbWFnZXMvdXBsb2Fkcy80NzU4L2cvbWFjYm9vay0xMmluY2gtMDAzLmpwZw=='
       },
       {
+        id: 2,
         name: "Pencil Case",
         category: "Stationary",
         location: "NS LT6",
@@ -23,6 +25,7 @@ export default new Vuex.Store({
         src: "https://images-na.ssl-images-amazon.com/images/I/51uXvfMZE8L._SX425_.jpg"
       },
       {
+        id: 3,
         name: "Water Bottle",
         category: "Water bottle",
         location: "NS McDonald's",
@@ -31,6 +34,7 @@ export default new Vuex.Store({
         src: "https://myer-media.com.au/wcsstore/MyerCatalogAssetStore/images/50/503/4231/500/10/258349780_258350410/258349780_1_720x928.jpg"
       },
       {
+        id: 4,
         name: "Water Bottle",
         category: "Water bottle",
         location: "NS McDonald's",
@@ -39,6 +43,7 @@ export default new Vuex.Store({
         src: "https://myer-media.com.au/wcsstore/MyerCatalogAssetStore/images/50/503/4231/500/10/258349780_258350410/258349780_1_720x928.jpg"
       },
       {
+        id: 5,
         name: "Macbook",
         category: "Electronic",
         location: "WKW Lobby",
@@ -47,6 +52,7 @@ export default new Vuex.Store({
         src: 'https://img.purch.com/o/aHR0cHM6Ly93d3cubGFwdG9wbWFnLmNvbS9pbWFnZXMvdXBsb2Fkcy80NzU4L2cvbWFjYm9vay0xMmluY2gtMDAzLmpwZw=='
       },
       {
+        id: 6,
         name: "Pencil Case",
         category: "Stationary",
         location: "NS LT6",
@@ -57,6 +63,7 @@ export default new Vuex.Store({
     ],
     foundItems: [
       {
+        id: 1,
         name: "Pencil Case",
         category: "Stationary",
         location: "NS LT6",
@@ -65,6 +72,7 @@ export default new Vuex.Store({
         src: "https://images-na.ssl-images-amazon.com/images/I/51uXvfMZE8L._SX425_.jpg"
       },
       {
+        id: 2,
         name: "Water Bottle",
         category: "Water bottle",
         location: "NS McDonald's",
@@ -73,6 +81,7 @@ export default new Vuex.Store({
         src: "https://myer-media.com.au/wcsstore/MyerCatalogAssetStore/images/50/503/4231/500/10/258349780_258350410/258349780_1_720x928.jpg"
       },
       {
+        id: 3,
         name: "Macbook",
         category: "Electronic",
         location: "WKW Lobby",
@@ -81,6 +90,7 @@ export default new Vuex.Store({
         src: 'https://img.purch.com/o/aHR0cHM6Ly93d3cubGFwdG9wbWFnLmNvbS9pbWFnZXMvdXBsb2Fkcy80NzU4L2cvbWFjYm9vay0xMmluY2gtMDAzLmpwZw=='
       },
       {
+        id: 4,
         name: "Water Bottle",
         category: "Water bottle",
         location: "NS McDonald's",
@@ -89,6 +99,7 @@ export default new Vuex.Store({
         src: "https://myer-media.com.au/wcsstore/MyerCatalogAssetStore/images/50/503/4231/500/10/258349780_258350410/258349780_1_720x928.jpg"
       },
       {
+        id: 5,
         name: "Macbook",
         category: "Electronic",
         location: "WKW Lobby",
@@ -97,6 +108,7 @@ export default new Vuex.Store({
         src: 'https://img.purch.com/o/aHR0cHM6Ly93d3cubGFwdG9wbWFnLmNvbS9pbWFnZXMvdXBsb2Fkcy80NzU4L2cvbWFjYm9vay0xMmluY2gtMDAzLmpwZw=='
       },
       {
+        id: 6,
         name: "Pencil Case",
         category: "Stationary",
         location: "NS LT6",
@@ -114,6 +126,8 @@ export default new Vuex.Store({
   },
   getters: {
     lostItems: state => state.lostItems,
-    foundItems: state => state.foundItems
+    lostItemsWithId: state => itemId => state.lostItems.filter(item => item.id == itemId),
+    foundItems: state => state.foundItems,
+    foundItemsWithId: state => itemId => state.foundItems.filter(item => item.id == itemId),
   }
 })

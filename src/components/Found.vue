@@ -7,9 +7,11 @@
     <h1 class="font-weight-regular mb-3">Found Items</h1>
     <v-layout row wrap>
       <v-flex
-        v-for="(item, index) in foundItems"
-        :key="index"
-        xs4
+        v-for="item in foundItems"
+        :key="item.id"
+        xs12
+        sm6
+        md4
       >
         <v-card>
           <v-img
@@ -46,7 +48,7 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn flat color="orange">This is mine</v-btn>
+            <v-btn flat color="orange" @click="toItemDetails(item)">Comments</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -61,13 +63,18 @@ export default {
   data: () => ({
     
   }),
+  methods: {
+    toItemDetails(item) {
+      this.$router.push(`/item/found/${item.id}`);
+    }
+  },
   computed: {
     ...mapGetters(["foundItems"])
   }
 };
 </script>
 
-<style>
+<style scoped>
 .responsive {
   height: 300px;
   width: auto;

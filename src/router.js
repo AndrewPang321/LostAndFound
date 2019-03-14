@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './components/Home.vue'
 import Lost from './components/Lost.vue'
 import Found from './components/Found.vue'
+import ItemDetails from './components/ItemDetails.vue'
 import Feedback from './components/Feedback.vue'
 
 Vue.use(Router)
@@ -25,6 +26,11 @@ export default new Router({
       path: '/found',
       name: 'found',
       component: Found
+    },
+    {
+      path: '/item/:lost_or_found/:itemId',
+      name: 'item_details',
+      component: ItemDetails
     },
     {
       path: '/feedback',
