@@ -84,6 +84,10 @@ export default {
       { icon: "remove_shopping_cart", text: "Lost" },
       { icon: "add_shopping_cart", text: "Found" },
       { divider: true },
+      { icon: "lock_open", text: "Sign In" },
+      { icon: "person_add", text: "Sign Up" },
+      { icon: "lock", text: "Sign Out" },
+      { divider: true },
       { icon: "feedback", text: "Feedback" },
       // { heading: 'Labels' },
       // { icon: 'add', text: 'Create new label' },
@@ -109,6 +113,12 @@ export default {
           break;
         case "Found":
           this.$router.push("/found");
+          break;
+        case "Sign In":
+          this.$router.push("/signin");
+          break;
+        case "Sign Up":
+          this.$router.push("/signup");
           break;
         case "Feedback":
           this.$router.push("/feedback");
