@@ -89,6 +89,10 @@ export default {
       { icon: "lock", text: "Sign Out" },
       { divider: true },
       { icon: "feedback", text: "Feedback" },
+      { divider: true },
+      { icon: "feedback", text: "All Feedback" },
+      { icon: "assignment", text: "User Reports" },
+      { icon: "block", text: "Blacklisted Users" },
       // { heading: 'Labels' },
       // { icon: 'add', text: 'Create new label' },
       // { divider: true },
@@ -122,6 +126,15 @@ export default {
           break;
         case "Feedback":
           this.$router.push("/feedback");
+          break;
+        case "All Feedback":
+          this.$router.push("/admin_feedback");
+          break;
+        case "User Reports":
+          this.$router.push("/admin_userreport");
+          break;
+        case "Blacklisted Users":
+          this.$router.push("/admin_blacklisteduser");
           break;
       }
     }
