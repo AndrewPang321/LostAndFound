@@ -7,7 +7,7 @@ module.exports = {
     default: () => {
         db.initDb()
         .then(async () => {
-            logger.info('Saving items ... ');
+            console.log('Saving items ... ');
             const content = fs.readFileSync('./data/items.json');
             const itemJSON = JSON.parse(content);
             
@@ -24,9 +24,9 @@ module.exports = {
             }));
             return db.insertItemRecords(items);
         }).then(() => {
-            logger.info('Done!!');
+            logger.info('Done data initialization!');
         }).catch((err) => {
-            logger.error('Error...', err);
+            console.log(err);
         });
     }
 };

@@ -4536,11 +4536,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.17.10, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-
-lodash@^4.17.11:
+lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
   version "4.17.11"
   resolved "https://artifacts.merck.com/artifactory/api/npm/npm-main-dev/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha1-s56mIp72B+zYniyN8SU2iRysm40=
@@ -7600,6 +7596,11 @@ widest-line@^2.0.0:
   integrity sha1-dDh2RzDsfvQ4HOTfgvuYpTFCo/w=
   dependencies:
     string-width "^2.1.1"
+
+winston-mysql@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/winston-mysql/-/winston-mysql-0.9.0.tgz#92ae9408177d30390d5b50fdd8ac8fa88e4632d3"
+  integrity sha1-kq6UCBd9MDkNW1D92KyPqI5GMtM=
 
 winston-transport@^4.3.0:
   version "4.3.0"

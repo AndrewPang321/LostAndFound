@@ -1,7 +1,7 @@
 const knex = require('knex');
 const logger = require('../logger');
 
-const initDb = () => {
+const initDb = async () => {
     logger.info('Creating DB...');
 
     this.db = knex({
@@ -19,31 +19,46 @@ const initDb = () => {
     const now = this.db.fn.now();
     const dbSchema = this.db.schema;
 
-    const fnCreateItems = function fnCreateItem() {
+    const fnCreateItems = () => {
         const tableName = 'items';
         logger.info(`Creating ${tableName} table...`);
-        return dbSchema.hasTable('items').then(function(exists){
-            if(!exists) {
-                return dbSchema.createTable('items', (table) => {
-                    table.increments('id').primary();
-                    table.string('name', 1000);
-                    table.string('category', 1000);
-                    table.string('location', 1000);
-                    table.string('date', 1000);
-                    table.string('description', 1000);
-                    table.string('src', 1000);
-                    table.string('status', 1000);
-                    table.timestamp('created_on').notNullable().defaultTo(now);
-                });
-            }
+        return dbSchema.createTableIfNotExists(tableName, (table) => {
+            table.increments('id').primary();
+            table.string('name', 1000);
+            table.string('category', 1000);
+            table.string('location', 1000);
+            table.string('date', 1000);
+            table.string('description', 1000);
+            table.string('src', 1000);
+            table.string('status', 1000);
+            table.timestamp('created_on').notNullable().defaultTo(now);
         });
     };
 
-    return fnCreateItems()
-        .then((db) => {
-            logger.info('DB has been created...');
-            return db;
-        });
+    const fnCreateUsers = () => {
+        const tableName = 'users';
+        logger.info(`Creating ${tableName} table...`);
+        return dbSchema.createTableIfNotExists(tableName, (table) => {
+            table.increments('id').primary();
+            table.string('email', 1000);
+        })
+    };
+
+    const fnCreateActivityLogs = () => {
+        const tableName = 'activity_logs';
+        logger.info(`Creating ${tableName} table...`);
+        return dbSchema.createTableIfNotExists(tableName, (table) => {
+            table.increments('id').primary();
+            table.string('level', 1000);
+            table.string('message', 1000);
+            table.string('meta', 1000);
+            table.timestamp('timestamp');
+        })
+    };
+
+    await fnCreateItems();
+    await fnCreateUsers();
+    await fnCreateActivityLogs();
 };
 
 const _insertRecords = (table, args) => {
