@@ -61,10 +61,52 @@ const _insertRecords = (table, args) => {
         });
 };
 
+const _selectRecords = (table) => {
+    if (!table) {
+        throw new Error('invalid_arguments');
+    }
+
+    return this.db
+        .select()
+        .table(table)
+        .then((results) => {
+            logger.info(`Records selected ${results[0]} on: ${table}`);
+            return results;
+        })
+        .catch((err) => {
+            logger.error(err.message, args);
+        });
+}
+
+const _selectRecordsWithConditions = (table, args) => {
+    if (!args) {
+        throw new Error('invalid_arguments');
+    }
+
+    const { key, value } = args;
+
+    console.log(key, value)
+
+    return this.db(table)
+        .where(key, value)
+        .then((results) => {
+            logger.info(`Records selected ${results[0]} on: ${table}`);
+            return results;
+        })
+        .catch((err) => {
+            logger.error(err.message, args);
+        });
+}
+
 const insertItemRecords = args => _insertRecords('items', args);
+const selectItemRecords = args => _selectRecords('items');
+const selectItemRecordsWithConditions = args => _selectRecordsWithConditions('items', args);
+
 
 module.exports = {
     initDb,
     insertItemRecords,
+    selectItemRecords,
+    selectItemRecordsWithConditions,
 };
 

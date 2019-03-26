@@ -22,7 +22,6 @@ module.exports = {
                     status: item.status
                 }
             }));
-            console.log("Items ...", items)
             return db.insertItemRecords(items);
         }).then(() => {
             logger.info('Done!!');
