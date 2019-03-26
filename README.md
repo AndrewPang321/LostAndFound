@@ -12,6 +12,10 @@ This project is for the course CI6205.
 ```
 yarn install
 ```
+### Run Server
+```
+user=${db_user} password=${db_password} npm run start
+```
 
 ### Compiles and hot-reloads for development
 ```
