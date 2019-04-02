@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   data: () => ({
@@ -66,7 +66,11 @@ export default {
   methods: {
     toItemDetails(item) {
       this.$router.push(`/item/found/${item.id}`);
-    }
+    },
+    ...mapActions(["getFoundItems"])
+  },
+  async created() {
+    await this.getFoundItems();
   },
   computed: {
     ...mapGetters(["foundItems"])
